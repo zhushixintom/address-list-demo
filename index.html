@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Contact list</title>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="demos/images/favicon.png">
+
+  <title>Contact List</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <!-- Custom styles for this template -->
+  <link href="dist/css/custom.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="top-fixed search-header">
+      <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+        <!-- <div class="container"> -->
+          <div class="input-group">
+            <!-- <a href="" class="admin"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a> -->
+            <a href="javascript:;" class="sort"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a>
+            <!-- glyphicon-sort-by-alphabet-alt -->
+            <input type="text" class="form-control search-input" placeholder="Search for contacts" id="search-input">
+          <!--   <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span> -->
+          </div><!-- /input-group -->
+        </div>
+      <!-- </nav> -->
+
+      <!-- loading -->
+      <div class="modal" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title text-center" id="myModalLabel">Notice</h4>
+            </div>
+            <div class="modal-body text-center">
+              <p>loading...</p>
+              <p>
+                <!-- <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i> -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="search-res" id="search-res">
+
+      </ul>
+
+      <div id="contact-list">
+        <p class='bg-warning hide' style='padding: 15px;'>no matching results!</p>
+        <div class="list-group" >
+          <!-- <a href="#" class="list-group-item">Dapibus ac facilisis in</a> -->
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal E -->
+
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  	<script src="src\lib\jquery-2.1.4.js"></script>
+	<script src="Template7/template7.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- contacts show template -->
+	<script id="contactsTpl" type="text/template7">
+	  {{#each people}}
+	  {{#if name}}
+	    <a href="javascript:;" data-toggle="modal" data-target="#myModal" class="list-group-item" data-id="{{id}}" data-name="{{name}}" data-phone="{{phone}}">{{name}}</a>
+	  {{else}}
+	    <p class="list-group-item clearfix"><span>{{capital}}</span><em>{{dindex}}</em></p>
+	  {{/if}}
+	  {{/each}}
+	</script>
+	<!-- single contact click to show template -->
+	<script id="singleContactsTpl" type="text/template7">
+	  name: {{name}} <br />email: {{email}}<br />phone: {{phone}}<br />address: {{address.suite}} {{address.street}} {{address.city}}
+	</script>
+	<script>
+	$('#loading').modal('show');
+	</script>
+	<script src="dist/js/custom.min.js"></script>
+  </body>
+</html>

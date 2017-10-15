@@ -1,0 +1,95 @@
+body {
+  /*padding-top: 20px;*/
+  padding-top: 64px;
+  padding-bottom: 20px;
+}
+
+.top-fixed .input-group{
+  margin: 15px;
+  .form-control:first-child{
+  	border-radius: 4px;
+  }
+  a{
+	  color: @color-text;
+	  display: table-cell;
+	  width: 1%;
+	  vertical-align: middle;
+	  padding: 0 12px 0 0;
+	  font-size: 18px;
+	  &:hover{
+	  	color: @color-text-darken;
+	  }
+	}
+}
+#contact-list p.list-group-item{
+  background-color: @color-border;
+  span{
+	  display: block;
+	  border-radius: 50%;
+	  background-color: #3297cb;
+	  width: 24px;
+	  height: 24px;
+	  text-align: center;
+	  line-height: 24px;
+	  color: @color-white;
+	  float: left;
+	}
+	em{
+	  color: @color-text;
+	  line-height: 24px;
+	  display: block;
+	  float: right;
+	  font-style: initial;
+	  font-size: 16px;
+	}
+}
+.top-fixed .input-group a .glyphicon{
+  line-height: initial;
+}
+.search-header{
+  background-color: @color-white;
+}
+#myModal{
+	.modal-header{
+	  background-color: @color-primary;
+	  color: #d8f7fc;
+	  .close{
+	 		 text-shadow: none;
+	 		 opacity: 0.7;
+	  }
+	  button span{
+		  color: #dadada;
+		}
+	}
+	.modal-content{
+	  border: none;
+	  border-radius: 0;
+	}
+	.modal-body{
+	  background-color: @color-white;
+	}
+}
+
+/* custom utilities */
+.top-fixed,
+.bottom-fixed{
+  width: 100%;
+  max-width: 730px;
+  position: fixed;
+  left: 50%;
+  z-index: 99;
+  transform: translate(-50%, 0);
+}
+.top-fixed{
+  top: 0;
+}
+.bottom-fixed{
+  bottom: 0;
+
+}
+
+.container {
+	@media (min-width: 768px) {
+    max-width: 730px;
+  }
+}

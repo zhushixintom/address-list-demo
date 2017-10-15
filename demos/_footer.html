@@ -1,0 +1,21 @@
+	<script src="src\lib\jquery-2.1.4.js"></script>
+	<script src="Template7/template7.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- contacts show template -->
+	<script id="contactsTpl" type="text/template7">
+	  {{#each people}}
+	  {{#if name}}
+	    <a href="javascript:;" data-toggle="modal" data-target="#myModal" class="list-group-item" data-id="{{id}}" data-name="{{name}}" data-phone="{{phone}}">{{name}}</a>
+	  {{else}}
+	    <p class="list-group-item clearfix"><span>{{capital}}</span><em>{{dindex}}</em></p>
+	  {{/if}}
+	  {{/each}}
+	</script>
+	<!-- single contact click to show template -->
+	<script id="singleContactsTpl" type="text/template7">
+	  name: {{name}} <br />email: {{email}}<br />phone: {{phone}}<br />address: {{address.suite}} {{address.street}} {{address.city}}
+	</script>
+	<script>
+	$('#loading').modal('show');
+	</script>
+	<script src="dist/js/custom.min.js"></script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Contact list</title>
+  <% include _header.html %>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="top-fixed search-header">
+      <!-- <nav class="navbar navbar-default navbar-fixed-top"> -->
+        <!-- <div class="container"> -->
+          <div class="input-group">
+            <!-- <a href="" class="admin"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a> -->
+            <a href="javascript:;" class="sort"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a>
+            <!-- glyphicon-sort-by-alphabet-alt -->
+            <input type="text" class="form-control search-input" placeholder="Search for contacts" id="search-input">
+          <!--   <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span> -->
+          </div><!-- /input-group -->
+        </div>
+      <!-- </nav> -->
+
+      <!-- loading -->
+      <div class="modal" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop='static'>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title text-center" id="myModalLabel">Notice</h4>
+            </div>
+            <div class="modal-body text-center">
+              <p>loading...</p>
+              <p>
+                <!-- <i class="fa fa-circle-o-notch fa-spin" style="font-size:24px"></i> -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="search-res" id="search-res">
+
+      </ul>
+
+      <div id="contact-list">
+        <p class='bg-warning hide' style='padding: 15px;'>no matching results!</p>
+        <div class="list-group" >
+          <!-- <a href="#" class="list-group-item">Dapibus ac facilisis in</a> -->
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal E -->
+
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+  <% include _footer.html %>
+  </body>
+</html>
